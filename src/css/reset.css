@@ -1,0 +1,34 @@
+/* ========= */
+/* RESET CSS */
+/* ========= */
+
+/* Set box-sizing and font-size default on html element */
+html {
+  /* 62.5% of 16px base font size is 10px */
+  font-size: 62.5%;
+
+  /* Ensure padding factored into element width and height calculation */
+  box-sizing: border-box;
+}
+
+body {
+  /* Reset visible font-size to 16px default via rem units */
+  font-size: 1.6rem;
+
+  /* Set minimum height of body to be the height of the viewpoer */
+  min-height: 100vh;
+
+  /* Set default page width to 100% of parent (html element) */
+  width: 100%;
+}
+
+*,
+*::before,
+*::after {
+  /* Allow box-sizing of bordder-box to be inherited by all elements */
+  box-sizing: inherit;
+
+  /* Remove default margin and padding */
+  margin: 0;
+  padding: 0;
+}

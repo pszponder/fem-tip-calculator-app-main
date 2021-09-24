@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <h1>spli<br />tter</h1>
+    </header>
+
+    <!-- APP -->
+    <main>
+      <!-- INPUT -->
+      <section class="input">
+        <!-- BILL AMOUNT -->
+        <div class="input__bill">
+          <label for="bill" class="input__label">Bill<br /></label>
+          <input type="text" id="bill" placeholder="0" class="input__input" />
+        </div>
+
+        <!-- TIP -->
+          <label class="input__label">Select Tip %<br /></label>
+          <!-- 5% -->
+          <input type="radio" id="five-percent" name="tip" />
+          <label class="button" for="five-percent">5%</label>
+          <!-- 10% -->
+          <input type="radio" id="ten-percent" name="tip" />
+          <label class="button" for="ten-percent">10%</label>
+          <!-- 15% -->
+          <input type="radio" id="fifteen-percent" name="tip" />
+          <label class="button" for="fifteen-percent">15%</label>
+          <!-- 25% -->
+          <input type="radio" id="twentyfive-percent" name="tip" />
+          <label class="button" for="twentyfive-percent">25%</label>
+          <!-- 50% -->
+          <input type="radio" id="fifty-percent" name="tip" />
+          <label class="button" for="fifty-percent">50%</label>
+          <!-- Custom -->
+          <input type="radio" id="custom" name="tip" />
+          <label class="button" for="custom">Custom</label>
+        </div>
+
+        <!-- NUMBER OF PEOPLE -->
+        <div class="input__num-people">
+          <label for="num-people" class="input__label"
+            >Number of People<br
+          /></label>
+          <input
+            type="text"
+            id="num-people"
+            placeholder="0"
+            class="input__input"
+          />
+        </div>
+      </section>
+
+      <!-- OUTPUT -->
+      <section class="output">
+        <div class="output__tip">
+          <h2 class="output__header2">Tip Amount</h2>
+          <h3 class="output__header3">/ person</h3>
+          <p class="output__result">$4.27</p>
+        </div>
+        <div class="output__total">
+          <h2 class="output__header2">Total</h2>
+          <h3 class="output__header3">/ person</h3>
+          <p class="output__result">$32.79</p>
+        </div>
+        <button class="output__btn">RESET</button>
+      </section>
+    </main>
+
+    <!-- ATTRIBUTION -->
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/pszponder">Piotr Szponder</a>.
+    </div>
+  </body>
+</html>
