@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="./src/css/style.css" />
 
     <title>Frontend Mentor | Tip calculator app</title>
-
   </head>
   <body>
     <!-- HEADER -->
@@ -31,9 +30,18 @@
         <div class="input__bill">
           <label for="bill" class="input__label">Bill<br /></label>
           <input type="text" id="bill" placeholder="0" class="input__input" />
+          <style>
+            #bill {
+              background-image: url("images/icon-dollar.svg");
+              background-repeat: no-repeat;
+              /* display: flex; */
+              /* justify-content: space-between; */
+            }
+          </style>
         </div>
 
         <!-- TIP -->
+        <div class="input__">
           <label class="input__label">Select Tip %<br /></label>
           <!-- 5% -->
           <input type="radio" id="five-percent" name="tip" />
