@@ -4,8 +4,130 @@
 .attribution {
   font-size: 11px;
   text-align: center;
+  margin-top: 10rem;
 }
 
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+
+/* ========= */
+/* VARIABLES */
+/* ========= */
+:root {
+  /* Primary Colors */
+  --color__cyan-primary: hsl(172, 67%, 45%);
+
+  /* Neutral Colors */
+  /* Very dark cyan */
+  --color__cyan-dark: hsl(183, 100%, 15%);
+  /* dark grayish cyan */
+  --color__cyan-dark-gray1: hsl(186, 14%, 43%);
+  /* dark grayish cyan */
+  --color__cyan-dark-gray2: hsl(184, 14%, 56%);
+  /* light grayish cyan */
+  --color__cyan-light-gray1: hsl(185, 41%, 84%);
+  /* light grayish cyan */
+  --color__cyan-light-gray2: hsl(189, 41%, 97%);
+  /* white */
+  --color__white: hsl(0, 0%, 100%);
+}
+
+/* ===== */
+/* FONTS */
+/* ===== */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+body {
+  font-family: "Space Mono", monospace;
+}
+
+input[type="text"],
+.input__tip label {
+  font-size: 2.4rem;
+}
+
+/* ==== */
+/* BODY */
+/* ==== */
+body {
+  background-color: var(--color__cyan-light-gray1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ====== */
+/* HEADER */
+/* ====== */
+h1 {
+  text-transform: uppercase;
+  color: hsl(183, 100%, 15%);
+}
+
+/* =========== */
+/* APPLICATION */
+/* =========== */
+main {
+  background-color: var(--color__white);
+  border-radius: 2rem;
+  max-width: 37rem;
+  padding: 2rem;
+
+  /* Create Flex Container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== */
+/* INPUT */
+/* ===== */
+.input {
+  /* width: 75%; */
+  background-color: red;
+}
+
+/* =========== */
+/* BILL AMOUNT */
+/* =========== */
+#bill {
+  background-image: url("../../images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  text-align: right;
+  width: 15rem;
+}
+
+/* ===== */
+/*  TIP  */
+/* ===== */
+
+/* ================ */
+/* NUMBER OF PEOPLE */
+/* ================ */
+#num-people {
+  background-image: url("../../images/icon-person.svg");
+  background-repeat: no-repeat;
+  text-align: right;
+}
+
+/* ====== */
+/* OUTPUT */
+/* ====== */
+.output {
+  /* width: 75%; */
+  background-color: green;
+}
+
+/* ================ */
+/* TIP (CALCULATED) */
+/* ================ */
+
+/* ================== */
+/* TOTAL (CALCULATED) */
+/* ================== */
+
+/* ============ */
+/* RESET BUTTON */
+/* ============ */
