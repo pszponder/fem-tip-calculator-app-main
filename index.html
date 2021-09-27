@@ -24,55 +24,65 @@
 
     <!-- APP -->
     <main>
-      <!-- INPUT -->
-      <section class="input">
-        <!-- BILL AMOUNT -->
-        <div class="input__bill">
-          <label for="bill" class="input__label">Bill<br /></label>
-          <input type="text" id="bill" placeholder="0" class="input__input" />
-        </div>
-
-        <!-- TIP -->
-        <div class="input__tip">
-          <button class="input__tip-btn">5%</button>
-          <button class="input__tip-btn">10%</button>
-          <button class="input__tip-btn">15%</button>
-          <button class="input__tip-btn">25%</button>
-          <button class="input__tip-btn">50%</button>
-          <button class="input__tip-btn">Custom</button>
-        </div>
-
-        <!-- NUMBER OF PEOPLE -->
-        <div class="input__num-people">
-          <label for="num-people" class="input__label"
-            >Number of People<br
-          /></label>
-          <input
-            type="text"
-            id="num-people"
-            placeholder="0"
-            class="input__input"
-          />
-        </div>
-      </section>
-
-      <!-- OUTPUT -->
-      <section class="output">
-        <!-- TIP (CALCULATED) -->
-        <div class="output__tip">
-          <h2 class="output__header2">Tip Amount</h2>
-          <h3 class="output__header3">/ person</h3>
-          <p class="output__result">$4.27</p>
-        </div>
-        <!-- TOTAL (CALCULATED) -->
-        <div class="output__total">
-          <h2 class="output__header2">Total</h2>
-          <h3 class="output__header3">/ person</h3>
-          <p class="output__result">$32.79</p>
-        </div>
-        <!-- BUTTON -->
-        <button class="output__btn">RESET</button>
-      </section>
+      <div class="wrapper">
+        <!-- INPUT -->
+        <section class="input">
+          <!-- BILL AMOUNT -->
+          <div class="input__bill">
+            <label for="bill" class="input__label">Bill<br /></label>
+            <input type="text" id="bill" placeholder="0" class="input__input" />
+          </div>
+          <!-- TIP -->
+          <div class="input__tip">
+            <h2>Select Tip %</h2>
+            <div class="input__tip-btn-group">
+              <button class="input__tip-btn">5%</button>
+              <button class="input__tip-btn">10%</button>
+              <button class="input__tip-btn">15%</button>
+              <button class="input__tip-btn">25%</button>
+              <button class="input__tip-btn">50%</button>
+              <!-- <button class="input__tip-btn">Custom</button> -->
+              <input
+                type="text"
+                id="custom"
+                placeholder="Custom"
+                class="input__tip-btn"
+              />
+            </div>
+          </div>
+          <!-- NUMBER OF PEOPLE -->
+          <div class="input__num-people">
+            <label for="num-people" class="input__label"
+              >Number of People<br
+            /></label>
+            <input
+              type="text"
+              id="num-people"
+              placeholder="0"
+              class="input__input"
+            />
+          </div>
+        </section>
+        <!-- OUTPUT -->
+        <section class="output">
+          <!-- TIP (CALCULATED) -->
+          <div class="output__tip">
+            <div class="output__headers">
+              <h2 class="output__header2">Tip Amount</h2>
+              <h3 class="output__header3">/ person</h3>
+            </div>
+            <p class="output__result">$4.27</p>
+          </div>
+          <!-- TOTAL (CALCULATED) -->
+          <div class="output__total">
+            <h2 class="output__header2">Total</h2>
+            <h3 class="output__header3">/ person</h3>
+            <p class="output__result">$32.79</p>
+          </div>
+          <!-- BUTTON -->
+          <button class="output__btn">RESET</button>
+        </section>
+      </div>
     </main>
 
     <!-- ATTRIBUTION -->
