@@ -38,41 +38,203 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
-body {
+* {
   font-family: "Space Mono", monospace;
+}
+
+.input__tip-btn,
+input,
+.output__result {
+  font-size: 2.4rem;
+}
+
+label,
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
 }
 
 /* ==== */
 /* BODY */
 /* ==== */
+body {
+  background-color: var(--color__cyan-light-gray1);
+
+  /* Flex to Align Content */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 
 /* ====== */
 /* HEADER */
 /* ====== */
+h1 {
+  color: var(--color__cyan-dark-gray1);
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+}
 
 /* =========== */
 /* APPLICATION */
 /* =========== */
+main {
+  background-color: var(--color__white);
+  border-radius: 2rem;
+  padding: 3rem;
+
+  width: 35rem;
+}
+
+/* ======= */
+/* Wrapper */
+/* ======= */
+.wrapper {
+  width: 100%;
+
+  /* Flex Container */
+  display: flex;
+  flex-direction: column;
+}
+
+.input__bill,
+.input__tip,
+.input__num-people,
+.output__tip,
+.output__total {
+  margin-bottom: 2rem;
+}
 
 /* ===== */
 /* INPUT */
-/* ===== *
+/* ===== */
+
+.input {
+  font-weight: bold;
+
+  /* Flex Item */
+  flex: 1;
+
+  /* Flex Container */
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  text-align: end;
+  background-color: var(--color__cyan-light-gray2);
+  color: var(--color__cyan-dark);
+  border: none;
+  font-weight: 700;
+}
+
+label,
+.input__tip h2 {
+  color: var(--color__cyan-dark-gray1);
+}
 
 /* =========== */
 /* BILL AMOUNT */
 /* =========== */
+.input__bill {
+  position: relative;
+}
+
+.input__bill .input__label::after {
+  position: absolute;
+  content: url(../../images/icon-dollar.svg);
+  top: 3.8rem;
+  left: 1.5rem;
+}
 
 /* ===== */
 /*  TIP  */
 /* ===== */
 
+.input__tip-btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+
+.input__tip-btn {
+  font-weight: 700;
+  border: none;
+  flex: 0 1 47%;
+  margin: 0.8rem 0;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+button.input__tip-btn {
+  background-color: var(--color__cyan-dark);
+  color: var(--color__cyan-light-gray2);
+}
+
+button.input__tip-btn:hover {
+  background-color: var(--color__cyan-primary);
+  color: var(--color__cyan-dark);
+}
+
 /* ================ */
 /* NUMBER OF PEOPLE */
 /* ================ */
+.input__num-people {
+  position: relative;
+}
+
+.input__num-people .input__label::after {
+  position: absolute;
+  content: url(../../images/icon-person.svg);
+  top: 3.8rem;
+  left: 1.5rem;
+}
 
 /* ====== */
 /* OUTPUT */
 /* ====== */
+.output {
+  padding: 2rem;
+
+  background-color: var(--color__cyan-dark);
+  border-radius: 2rem;
+
+  /* Flex Item */
+  flex: 1;
+
+  /* Flex Container */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.output__tip,
+.output__total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.output__header2 {
+  color: var(--color__cyan-light-gray2);
+}
+
+.output__header3 {
+  color: var(--color__cyan-dark-gray2);
+}
+
+.output__result {
+  color: var(--color__cyan-primary);
+  font-size: 3.5rem;
+  font-weight: 700;
+}
 
 /* ================ */
 /* TIP (CALCULATED) */
@@ -85,3 +247,39 @@ body {
 /* ============ */
 /* RESET BUTTON */
 /* ============ */
+.output__btn {
+  padding: 1rem 2rem;
+  background-color: hsl(183, 100%, 20%);
+  color: var(--color__cyan-dark);
+  font-size: 2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+
+.output__btn:hover {
+  background-color: var(--color__cyan-primary);
+}
+
+/* Media Query for Desktop Mode*/
+@media (min-width: 49em) {
+  main {
+    width: 78rem;
+  }
+
+  .wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .input,
+  .output {
+    /* flex-basis: 45%; */
+    max-width: 35rem;
+  }
+
+  .input__tip-btn {
+    flex: 0 1 30%;
+  }
+}
