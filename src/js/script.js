@@ -225,17 +225,10 @@ function handleReset() {
 // Add event listener to the resetBtn using the reset() event handler
 resetBtn.addEventListener("click", handleReset);
 
-/*
-Bill = $142.55
-Tip = 15%
-Number of People = 5
-Tip Amount / Person = $4.27
-Total Amount / Person = $32.79
+// Run handleReset on page reload
+window.onload = function () {
+  handleReset();
+};
 
-Total Amount = Bill * (1 + tip) / numPeople
-Tip Amount = (Bill * tip ) / numPeople
-*/
-
-// TODO: Force the inputs to clear on page reload (form.reset()?)
 // TODO: add red border and error message if user inputs 0 people into people text box
 // TODO: add animation to inputs if they are not valid (ex, if user enters a decimal number for people or enters words into any of the inputs)
