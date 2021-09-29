@@ -14,38 +14,35 @@ const tipBtn15 = document.querySelector("#p15");
 const tipBtn25 = document.querySelector("#p25");
 const tipBtn50 = document.querySelector("#p50");
 
-console.log(tipBtn05);
-console.log(tipBtn10);
-console.log(tipBtn15);
-console.log(tipBtn25);
-console.log(tipBtn50);
-
 // ================
 // CUSTOM TIP INPUT
 // ================
 // Store the custom tip button in a variable
 const tipBtnCustom = document.querySelector("#pCustom");
-console.log(tipBtnCustom);
 
 // ======================
 // NUMBER OF PEOPLE INPUT
 // ======================
 // Store the number of people input in a variable
+const numPeople = document.querySelector("#num-people");
 
 // ===================
 // TIP AMOUNT / PERSON
 // ===================
 // Store the tip amount / person output in a variable
+const tipAmount = document.querySelector("#tip-amount");
 
 // ==============
 // TOTAL / PERSON
 // ==============
 // Store the total amount / person output in a variable
+const totalAmount = document.querySelector("#total-amount");
 
 // ============
 // RESET BUTTON
 // ============
 // Store the reset button in a variable
+const reset = document.querySelector(".output__btn");
 
 // Add an event handler to add a styling class to tip buttons
 
