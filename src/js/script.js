@@ -14,16 +14,47 @@ const inputs = {
 // Store the bill input element in a variable
 const inputBill = document.querySelector("#bill");
 
+// Add event handler to capture input
+// This will be used for Bill input and Number of People
+function handleInput(event) {
+  const inputStr = parseFloat(event.currentTarget.value);
+
+  if (inputStr) {
+  }
+}
+
+// // Add event handler to capture custom input
+// function handleBtnTipCustom(event) {
+//   // Compute the percent of the string selected
+//   const percentStr = parseInt(event.currentTarget.value);
+
+//   // Convert percentStr to percent if it is a number
+//   if (percentStr) {
+//     const percent = percentStr / 100;
+
+//     // Update the value of the inputs object tip with percent
+//     inputs.tip = percent;
+//   }
+// }
+
+// // Add event handler function to clear the custom tip input
+// function handleBtnTipClear() {
+//   tipBtnCustom.value = "";
+// }
+
+// // Add event listener to the custom tip button
+// tipBtnCustom.addEventListener("keyup", handleBtnTipCustom);
+
 // ===========
 // TIP BUTTONS
 // ===========
 // Store the tip buttons in a variable
 const tipButtons = document.querySelectorAll("button.input__tip-btn");
-const tipBtn05 = document.querySelector("#p05");
-const tipBtn10 = document.querySelector("#p10");
-const tipBtn15 = document.querySelector("#p15");
-const tipBtn25 = document.querySelector("#p25");
-const tipBtn50 = document.querySelector("#p50");
+// const tipBtn05 = document.querySelector("#p05");
+// const tipBtn10 = document.querySelector("#p10");
+// const tipBtn15 = document.querySelector("#p15");
+// const tipBtn25 = document.querySelector("#p25");
+// const tipBtn50 = document.querySelector("#p50");
 
 // Create an event handler function to remove the active state from all buttons
 function handleRemoveTipActive(buttons) {
@@ -31,6 +62,9 @@ function handleRemoveTipActive(buttons) {
   buttons.forEach((button) => {
     button.classList.remove("input__tip-btn--active");
   });
+
+  // Also clear the custom tip button
+  handleBtnTipClear();
 }
 
 // Create an event handler function to toggle an active state to the selected button
@@ -46,7 +80,7 @@ function handleToggleTipActive(event) {
 function handleBtnTip(event) {
   // Compute the percent of the string selected
   const percentStr = parseInt(event.currentTarget.innerText);
-  const percent = parseInt(percentStr) / 100;
+  const percent = percentStr / 100;
 
   // Update the value of the inputs object tip with percent
   inputs.tip = percent;
@@ -63,6 +97,28 @@ tipButtons.forEach((button) => {
 // ================
 // Store the custom tip button in a variable
 const tipBtnCustom = document.querySelector("#pCustom");
+
+// Add event handler to capture custom input
+function handleBtnTipCustom(event) {
+  // Compute the percent of the string selected
+  const percentStr = parseFloat(event.currentTarget.value);
+
+  // Convert percentStr to percent if it is a number
+  if (percentStr) {
+    const percent = percentStr / 100;
+
+    // Update the value of the inputs object tip with percent
+    inputs.tip = percent;
+  }
+}
+
+// Add event handler function to clear the custom tip input
+function handleBtnTipClear() {
+  tipBtnCustom.value = "";
+}
+
+// Add event listener to the custom tip button
+tipBtnCustom.addEventListener("keyup", handleBtnTipCustom);
 
 // ======================
 // NUMBER OF PEOPLE INPUT
@@ -106,7 +162,7 @@ function handleReset() {
   handleRemoveTipActive(tipButtons);
 
   // Reset value of the custom tip field
-  tipBtnCustom.value = "";
+  handleBtnTipClear();
 
   // Reset value of the Number of People
   inputPeople.value = "";
