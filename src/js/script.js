@@ -2,16 +2,30 @@
 // BILL INPUT
 // ==========
 // Store the bill input element in a variable
+const inputBill = document.querySelector("#bill");
 
 // ===========
 // TIP BUTTONS
 // ===========
 // Store the tip buttons in a variable
+const tipBtn05 = document.querySelector("#p05");
+const tipBtn10 = document.querySelector("#p10");
+const tipBtn15 = document.querySelector("#p15");
+const tipBtn25 = document.querySelector("#p25");
+const tipBtn50 = document.querySelector("#p50");
+
+console.log(tipBtn05);
+console.log(tipBtn10);
+console.log(tipBtn15);
+console.log(tipBtn25);
+console.log(tipBtn50);
 
 // ================
 // CUSTOM TIP INPUT
 // ================
 // Store the custom tip button in a variable
+const tipBtnCustom = document.querySelector("#pCustom");
+console.log(tipBtnCustom);
 
 // ======================
 // NUMBER OF PEOPLE INPUT
