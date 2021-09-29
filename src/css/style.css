@@ -139,6 +139,11 @@ label,
   color: var(--color__cyan-dark-gray1);
 }
 
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
 /* =========== */
 /* BILL AMOUNT */
 /* =========== */
