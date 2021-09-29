@@ -132,6 +132,7 @@ input {
   color: var(--color__cyan-dark);
   border: none;
   font-weight: 700;
+  border-radius: 0.5rem;
 }
 
 label,
