@@ -94,6 +94,11 @@ const tipBtnCustom = document.querySelector("#pCustom");
 
 // Add event handler to capture custom input
 function handleBtnTipCustom(event) {
+  // Clear any tip buttons which may be selected
+  tipButtons.forEach((button) => {
+    button.classList.remove("input__tip-btn--active");
+  });
+
   // Compute the percent of the string selected
   const percentStr = parseFloat(event.currentTarget.value);
 
