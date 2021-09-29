@@ -94,6 +94,11 @@ const resetBtn = document.querySelector(".output__btn");
 
 // Create event handler to reset the tip calculator values
 function handleReset() {
+  // Reset values of inputs object
+  for (const key in inputs) {
+    inputs[key] = 0;
+  }
+
   // Reset value of the Bill Input
   inputBill.value = "";
 
