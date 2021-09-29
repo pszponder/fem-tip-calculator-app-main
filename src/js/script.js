@@ -15,8 +15,7 @@ const inputs = {
 const inputBill = document.querySelector("#bill");
 
 // Add event handler to capture input
-// This will be used for Bill input and Number of People
-function handleInput(event) {
+function handleInputBill(event) {
   const inputStr = parseFloat(event.currentTarget.value);
 
   if (inputStr) {
@@ -30,7 +29,7 @@ function handleBillClear() {
 }
 
 // Add event listener to the bill input
-inputBill.addEventListener("keyup", handleInput);
+inputBill.addEventListener("keyup", handleInputBill);
 
 // ===========
 // TIP BUTTONS
@@ -113,6 +112,22 @@ tipBtnCustom.addEventListener("keyup", handleBtnTipCustom);
 // Store the number of people input in a variable
 const inputPeople = document.querySelector("#num-people");
 
+function handleInputPeople(event) {
+  const inputStr = parseInt(event.currentTarget.value);
+
+  if (inputStr) {
+    inputs.people = inputStr;
+  }
+}
+
+// Add event handler function to clear the custom tip input
+function handleNumPeopleClear() {
+  inputPeople.value = "";
+}
+
+// Add event listener to the bill input
+inputPeople.addEventListener("keyup", handleInputPeople);
+
 // =======
 // OUTPUTS
 // =======
@@ -152,7 +167,7 @@ function handleReset() {
   handleBtnTipClear();
 
   // Reset value of the Number of People
-  inputPeople.value = "";
+  handleNumPeopleClear();
 
   // Reset value of the Tip Amount
   amountTip.innerText = "$0.00";
