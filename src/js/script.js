@@ -20,30 +20,17 @@ function handleInput(event) {
   const inputStr = parseFloat(event.currentTarget.value);
 
   if (inputStr) {
+    inputs.bill = inputStr;
   }
 }
 
-// // Add event handler to capture custom input
-// function handleBtnTipCustom(event) {
-//   // Compute the percent of the string selected
-//   const percentStr = parseInt(event.currentTarget.value);
+// Add event handler function to clear the custom tip input
+function handleBillClear() {
+  inputBill.value = "";
+}
 
-//   // Convert percentStr to percent if it is a number
-//   if (percentStr) {
-//     const percent = percentStr / 100;
-
-//     // Update the value of the inputs object tip with percent
-//     inputs.tip = percent;
-//   }
-// }
-
-// // Add event handler function to clear the custom tip input
-// function handleBtnTipClear() {
-//   tipBtnCustom.value = "";
-// }
-
-// // Add event listener to the custom tip button
-// tipBtnCustom.addEventListener("keyup", handleBtnTipCustom);
+// Add event listener to the bill input
+inputBill.addEventListener("keyup", handleInput);
 
 // ===========
 // TIP BUTTONS
@@ -156,7 +143,7 @@ function handleReset() {
   }
 
   // Reset value of the Bill Input
-  inputBill.value = "";
+  handleBillClear();
 
   // Remove active state of tip buttons
   handleRemoveTipActive(tipButtons);
