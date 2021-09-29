@@ -190,6 +190,11 @@ button.input__tip-btn:hover {
   color: var(--color__cyan-dark);
 }
 
+button.input__tip-btn--active {
+  background-color: var(--color__cyan-primary);
+  color: var(--color__cyan-dark);
+}
+
 /* ================ */
 /* NUMBER OF PEOPLE */
 /* ================ */
