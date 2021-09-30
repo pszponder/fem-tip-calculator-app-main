@@ -128,8 +128,23 @@ tipBtnCustom.addEventListener("keyup", handleBtnTipCustom);
 // Store the number of people input in a variable
 const inputPeople = document.querySelector("#num-people");
 
+// Store the number of people label in a variable
+const inputPeopleLabel = document.querySelector("#num-people-invalid");
+
 function handleInputPeople(event) {
   const inputStr = parseInt(event.currentTarget.value);
+
+  // Show error message to user if they input 0
+  if (inputStr === 0) {
+    inputPeople.classList.add("input--invalid");
+    inputPeopleLabel.style.display = "inline";
+    return;
+  }
+  // Remove error message otherwise
+  else {
+    inputPeople.classList.remove("input--invalid");
+    inputPeopleLabel.style.display = "none";
+  }
 
   // If input is valid
   if (inputStr) {
@@ -143,6 +158,8 @@ function handleInputPeople(event) {
 // Add event handler function to clear the custom tip input
 function clearNumPeople() {
   inputPeople.value = "";
+  inputPeople.classList.remove("input--invalid");
+  inputPeopleLabel.style.display = "none";
 }
 
 // Add event listener to the bill input
@@ -230,5 +247,4 @@ window.onload = function () {
   handleReset();
 };
 
-// TODO: add red border and error message if user inputs 0 people into people text box
 // TODO: add animation to inputs if they are not valid (ex, if user enters a decimal number for people or enters words into any of the inputs)
