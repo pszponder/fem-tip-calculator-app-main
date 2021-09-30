@@ -197,7 +197,7 @@ button.input__tip-btn--active {
 .input__num-people .input__label::after {
   position: absolute;
   content: url(../../images/icon-person.svg);
-  top: 3.8rem;
+  top: 4.2rem;
   left: 1.5rem;
   z-index: 1;
 }
