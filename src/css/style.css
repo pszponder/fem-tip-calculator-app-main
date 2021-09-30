@@ -212,6 +212,7 @@ button.input__tip-btn--active {
 /* ============= */
 /* INVALID INPUT */
 /* ============= */
+
 .input--invalid {
   outline: none;
   border: 0.2rem solid orangered;
@@ -221,7 +222,8 @@ button.input__tip-btn--active {
   color: orangered;
   position: absolute;
   right: 0;
-  display: none; /* display: inline to show */
+  /* display: inline to show */
+  display: none;
 }
 
 /* ====== */

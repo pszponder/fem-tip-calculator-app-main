@@ -128,22 +128,31 @@ tipBtnCustom.addEventListener("keyup", handleBtnTipCustom);
 // Store the number of people input in a variable
 const inputPeople = document.querySelector("#num-people");
 
-// Store the number of people label in a variable
-const inputPeopleLabel = document.querySelector("#num-people-invalid");
+// Store the span element containing error message for 0
+const numPeopleInvalidInput = document.querySelector("#num-people-invalid");
 
 function handleInputPeople(event) {
   const inputStr = parseInt(event.currentTarget.value);
 
-  // Show error message to user if they input 0
+  // Show error message if input is 0
   if (inputStr === 0) {
     inputPeople.classList.add("input--invalid");
-    inputPeopleLabel.style.display = "inline";
+    numPeopleInvalidInput.innerText = "Can't be zero";
+    numPeopleInvalidInput.style.display = "inline";
+    return;
+  }
+  // Show error message if input is not a number
+  else if (Number.isNaN(inputStr) && event.currentTarget.value !== "") {
+    inputPeople.classList.add("input--invalid");
+    numPeopleInvalidInput.innerText = "Please enter a number";
+    numPeopleInvalidInput.style.display = "inline";
     return;
   }
   // Remove error message otherwise
   else {
+    // Remove error messages
     inputPeople.classList.remove("input--invalid");
-    inputPeopleLabel.style.display = "none";
+    numPeopleInvalidInput.style.display = "none";
   }
 
   // If input is valid
@@ -155,11 +164,11 @@ function handleInputPeople(event) {
   }
 }
 
-// Add event handler function to clear the custom tip input
+// Add function to clear the custom tip input
 function clearNumPeople() {
   inputPeople.value = "";
   inputPeople.classList.remove("input--invalid");
-  inputPeopleLabel.style.display = "none";
+  numPeopleInvalidInput.style.display = "none";
 }
 
 // Add event listener to the bill input
