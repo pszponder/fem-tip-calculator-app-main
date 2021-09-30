@@ -222,8 +222,15 @@ button.input__tip-btn--active {
   color: orangered;
   position: absolute;
   right: 0;
-  /* display: inline to show */
+  /* display: inline; */
   display: none;
+}
+
+.input__tip-btn-custom--invalid {
+  color: orangered;
+  position: absolute;
+  right: 0;
+  display: inline;
 }
 
 /* ====== */

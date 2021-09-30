@@ -30,7 +30,13 @@
         <section class="input">
           <!-- BILL AMOUNT -->
           <div class="input__bill">
-            <label for="bill" class="input__label">Bill<br /></label>
+            <label for="bill" class="input__label"
+              >Bill<span
+                id="input__bill--invalid"
+                class="input__label--invalid"
+              ></span
+              ><br
+            /></label>
             <input type="text" id="bill" placeholder="0" class="input__input" />
           </div>
           <!-- TIP -->
@@ -49,13 +55,19 @@
                 placeholder="Custom"
                 class="input__tip-btn"
               />
+              <span
+                class="input__tip-btn-custom--invalid"
+              >asdf</span
             </div>
           </div>
           <!-- NUMBER OF PEOPLE -->
           <div class="input__num-people">
             <label for="num-people" class="input__label"
               >Number of People
-              <span id="num-people-invalid" class="input__label--invalid"></span
+              <span
+                id="input__num-people--invalid"
+                class="input__label--invalid"
+              ></span
               ><br
             /></label>
             <input

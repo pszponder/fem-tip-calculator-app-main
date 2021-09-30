@@ -14,14 +14,26 @@ const inputs = {
 // Store the bill input element in a variable
 const inputBill = document.querySelector("#bill");
 
+// Store the bill span element containing the error message
+const inputBillInvalidInput = document.querySelector("#input__bill--invalid");
+
 // Add event handler to capture input
 function handleInputBill(event) {
   // Extract value from input
   const inputStr = parseFloat(event.currentTarget.value);
 
+  if (Number.isNaN(inputStr) && event.currentTarget.value !== "") {
+    inputBill.classList.add("input--invalid");
+    inputBillInvalidInput.innerText = "Please enter a number";
+    inputBillInvalidInput.style.display = "inline";
+    return;
+  } else {
+    // Remove error message otherwise
+    inputBill.classList.remove("input--invalid");
+    inputBillInvalidInput.style.display = "none";
+  }
+
   // If input is valid,
-  // update bill value
-  // determine if output can be computed
   if (inputStr) {
     inputs.bill = inputStr;
     canCompute(inputs);
@@ -31,6 +43,8 @@ function handleInputBill(event) {
 // Add function to clear the custom tip input
 function clearBill() {
   inputBill.value = "";
+  inputBill.classList.remove("input--invalid");
+  inputBillInvalidInput.style.display = "none";
 }
 
 // Add event listener to the bill input
@@ -129,7 +143,9 @@ tipBtnCustom.addEventListener("keyup", handleBtnTipCustom);
 const inputPeople = document.querySelector("#num-people");
 
 // Store the span element containing error message for 0
-const numPeopleInvalidInput = document.querySelector("#num-people-invalid");
+const inputPeopleInvalidInput = document.querySelector(
+  "#input__num-people--invalid"
+);
 
 function handleInputPeople(event) {
   const inputStr = parseInt(event.currentTarget.value);
@@ -137,22 +153,22 @@ function handleInputPeople(event) {
   // Show error message if input is 0
   if (inputStr === 0) {
     inputPeople.classList.add("input--invalid");
-    numPeopleInvalidInput.innerText = "Can't be zero";
-    numPeopleInvalidInput.style.display = "inline";
+    inputPeopleInvalidInput.innerText = "Can't be zero";
+    inputPeopleInvalidInput.style.display = "inline";
     return;
   }
   // Show error message if input is not a number
   else if (Number.isNaN(inputStr) && event.currentTarget.value !== "") {
     inputPeople.classList.add("input--invalid");
-    numPeopleInvalidInput.innerText = "Please enter a number";
-    numPeopleInvalidInput.style.display = "inline";
+    inputPeopleInvalidInput.innerText = "Please enter a number";
+    inputPeopleInvalidInput.style.display = "inline";
     return;
   }
   // Remove error message otherwise
   else {
     // Remove error messages
     inputPeople.classList.remove("input--invalid");
-    numPeopleInvalidInput.style.display = "none";
+    inputPeopleInvalidInput.style.display = "none";
   }
 
   // If input is valid
@@ -168,7 +184,7 @@ function handleInputPeople(event) {
 function clearNumPeople() {
   inputPeople.value = "";
   inputPeople.classList.remove("input--invalid");
-  numPeopleInvalidInput.style.display = "none";
+  inputPeopleInvalidInput.style.display = "none";
 }
 
 // Add event listener to the bill input
