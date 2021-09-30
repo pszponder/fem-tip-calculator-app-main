@@ -164,6 +164,7 @@ label {
 /* ===== */
 
 .input__tip-btn-group {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-content: space-between;
@@ -191,6 +192,11 @@ button.input__tip-btn:hover {
   color: var(--color__cyan-dark);
 }
 
+button.input__tip-btn--active {
+  background-color: var(--color__cyan-primary);
+  color: var(--color__cyan-dark);
+}
+
 /* ================ */
 /* NUMBER OF PEOPLE */
 /* ================ */
@@ -203,6 +209,31 @@ button.input__tip-btn:hover {
   content: url(../../images/icon-person.svg);
   top: 3.8rem;
   left: 1.5rem;
+}
+
+/* ============= */
+/* INVALID INPUT */
+/* ============= */
+
+.input--invalid {
+  outline: none;
+  border: 0.2rem solid orangered;
+}
+
+.input__label--invalid {
+  color: orangered;
+  position: absolute;
+  right: 0;
+  /* display: inline; */
+  display: none;
+}
+
+.input__tip-btn-custom--invalid {
+  color: orangered;
+  position: absolute;
+  right: 0rem;
+  bottom: -1.5rem;
+  display: none;
 }
 
 /* ====== */

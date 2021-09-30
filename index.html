@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
+    <script src="./src/js/script.js" defer></script>
 
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
@@ -29,31 +30,45 @@
         <section class="input">
           <!-- BILL AMOUNT -->
           <div class="input__bill">
-            <label for="bill" class="input__label">Bill<br /></label>
+            <label for="bill" class="input__label"
+              >Bill<span
+                id="input__bill--invalid"
+                class="input__label--invalid"
+              ></span
+              ><br
+            /></label>
             <input type="text" id="bill" placeholder="0" class="input__input" />
           </div>
           <!-- TIP -->
           <div class="input__tip">
             <h2>Select Tip %</h2>
             <div class="input__tip-btn-group">
-              <button class="input__tip-btn">5%</button>
-              <button class="input__tip-btn">10%</button>
-              <button class="input__tip-btn">15%</button>
-              <button class="input__tip-btn">25%</button>
-              <button class="input__tip-btn">50%</button>
+              <button class="input__tip-btn" id="p05">5%</button>
+              <button class="input__tip-btn" id="p10">10%</button>
+              <button class="input__tip-btn" id="p15">15%</button>
+              <button class="input__tip-btn" id="p25">25%</button>
+              <button class="input__tip-btn" id="p50">50%</button>
               <!-- <button class="input__tip-btn">Custom</button> -->
               <input
                 type="text"
-                id="custom"
+                id="pCustom"
                 placeholder="Custom"
                 class="input__tip-btn"
               />
+              <span
+                class="input__tip-btn-custom--invalid"
+              >Enter a number</span
             </div>
           </div>
           <!-- NUMBER OF PEOPLE -->
           <div class="input__num-people">
             <label for="num-people" class="input__label"
-              >Number of People<br
+              >Number of People
+              <span
+                id="input__num-people--invalid"
+                class="input__label--invalid"
+              ></span
+              ><br
             /></label>
             <input
               type="text"
@@ -72,7 +87,7 @@
                 <h2 class="output__header2">Tip Amount</h2>
                 <h3 class="output__header3">/ person</h3>
               </div>
-              <p class="output__result">$0.00</p>
+              <p class="output__result" id="tip-amount">$0.00</p>
             </div>
             <!-- TOTAL (CALCULATED) -->
             <div class="output__total">
@@ -80,7 +95,7 @@
                 <h2 class="output__header2">Total</h2>
                 <h3 class="output__header3">/ person</h3>
               </div>
-              <p class="output__result">$0.00</p>
+              <p class="output__result" id="total-amount">$0.00</p>
             </div>
           </div>
           <!-- BUTTON -->
