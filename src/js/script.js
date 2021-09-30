@@ -289,5 +289,3 @@ resetBtn.addEventListener("click", handleReset);
 window.onload = function () {
   handleReset();
 };
-
-// TODO: add animation to inputs if they are not valid (ex, if user enters a decimal number for people or enters words into any of the inputs)
