@@ -26,6 +26,7 @@ function handleInputBill(event) {
     inputBill.classList.add("input--invalid");
     inputBillInvalidInput.innerText = "Enter a number";
     inputBillInvalidInput.style.display = "inline";
+
     return;
   } else {
     // Remove error message otherwise

@@ -1,15 +1,3 @@
-/* =========== */
-/* ATTRIBUTION */
-/* =========== */
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-
 /* ========= */
 /* VARIABLES */
 /* ========= */
@@ -66,7 +54,7 @@ body {
   /* Flex to Align Content */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
@@ -77,6 +65,7 @@ h1 {
   color: var(--color__cyan-dark-gray1);
   text-transform: uppercase;
   letter-spacing: 1rem;
+  margin-bottom: 2rem;
 }
 
 /* =========== */
@@ -323,6 +312,22 @@ button.input__tip-btn--active {
 
 .output__btn:hover {
   background-color: var(--color__cyan-primary);
+}
+
+/* =========== */
+/* ATTRIBUTION */
+/* =========== */
+footer {
+  margin-top: 2rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
 /* Media Query for Desktop Mode*/
