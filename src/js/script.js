@@ -24,7 +24,7 @@ function handleInputBill(event) {
 
   if (Number.isNaN(inputStr) && event.currentTarget.value !== "") {
     inputBill.classList.add("input--invalid");
-    inputBillInvalidInput.innerText = "Please enter a number";
+    inputBillInvalidInput.innerText = "Enter a number";
     inputBillInvalidInput.style.display = "inline";
     return;
   } else {
@@ -106,6 +106,11 @@ tipButtons.forEach((button) => {
 // Store the custom tip button in a variable
 const tipBtnCustom = document.querySelector("#pCustom");
 
+// Store the custom tip button span error message
+const tipBtnCustomInvalidInput = document.querySelector(
+  ".input__tip-btn-custom--invalid"
+);
+
 // Add event handler to capture custom input
 function handleBtnTipCustom(event) {
   // Clear any tip buttons which may be selected
@@ -115,6 +120,17 @@ function handleBtnTipCustom(event) {
 
   // Compute the percent of the string selected
   const percentStr = parseFloat(event.currentTarget.value);
+
+  if (Number.isNaN(percentStr) && event.currentTarget.value !== "") {
+    tipBtnCustom.classList.add("input--invalid");
+    tipBtnCustomInvalidInput.innerText = "Enter a number";
+    tipBtnCustomInvalidInput.style.display = "inline";
+    return;
+  } else {
+    // Remove error message otherwise
+    tipBtnCustom.classList.remove("input--invalid");
+    tipBtnCustomInvalidInput.style.display = "none";
+  }
 
   // Convert percentStr to percent if it is a number
   if (percentStr) {
@@ -131,6 +147,8 @@ function handleBtnTipCustom(event) {
 // Add function to clear the custom tip input
 function clearTipBtn() {
   tipBtnCustom.value = "";
+  tipBtnCustom.classList.remove("input--invalid");
+  tipBtnCustomInvalidInput.style.display = "none";
 }
 
 // Add event listener to the custom tip button
@@ -160,7 +178,7 @@ function handleInputPeople(event) {
   // Show error message if input is not a number
   else if (Number.isNaN(inputStr) && event.currentTarget.value !== "") {
     inputPeople.classList.add("input--invalid");
-    inputPeopleInvalidInput.innerText = "Please enter a number";
+    inputPeopleInvalidInput.innerText = "Enter a number";
     inputPeopleInvalidInput.style.display = "inline";
     return;
   }

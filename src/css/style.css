@@ -163,6 +163,7 @@ label {
 /* ===== */
 
 .input__tip-btn-group {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-content: space-between;
@@ -229,8 +230,9 @@ button.input__tip-btn--active {
 .input__tip-btn-custom--invalid {
   color: orangered;
   position: absolute;
-  right: 0;
-  display: inline;
+  right: 0rem;
+  bottom: -1.5rem;
+  display: none;
 }
 
 /* ====== */
