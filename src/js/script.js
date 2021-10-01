@@ -22,30 +22,38 @@ function handleInputBill(event) {
   // Extract value from input
   const inputStr = parseFloat(event.currentTarget.value);
 
+  // If the input is not a number, display the the invalid input
   if (Number.isNaN(inputStr) && event.currentTarget.value !== "") {
     inputBill.classList.add("input--invalid");
     inputBillInvalidInput.innerText = "Enter a number";
     inputBillInvalidInput.style.display = "inline";
-
     return;
-  } else {
-    // Remove error message otherwise
-    inputBill.classList.remove("input--invalid");
-    inputBillInvalidInput.style.display = "none";
+  }
+  // Remove error message otherwise
+  // This is here to ensure that when user clears the input, any pre-existing error message is removed
+  else {
+    clearBillInvalidInput();
   }
 
   // If input is valid,
+  // update the global object bill value and
+  // determine if we can compute the tip
   if (inputStr) {
     inputs.bill = inputStr;
     canCompute(inputs);
   }
 }
 
+// Add function to clear error message
+function clearBillInvalidInput() {
+  inputBill.classList.remove("input--invalid");
+  inputBillInvalidInput.style.display = "none";
+}
+
 // Add function to clear the custom tip input
 function clearBill() {
   inputBill.value = "";
-  inputBill.classList.remove("input--invalid");
-  inputBillInvalidInput.style.display = "none";
+  clearBillInvalidInput();
 }
 
 // Add event listener to the bill input
