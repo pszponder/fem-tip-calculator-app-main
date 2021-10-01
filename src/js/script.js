@@ -22,7 +22,7 @@ function handleInputBill(event) {
   // Extract value from input
   const inputStr = parseFloat(event.currentTarget.value);
 
-  // If the input is not a number, display the the invalid input
+  // If the input is not a number, display the the invalid input error message
   if (Number.isNaN(inputStr) && event.currentTarget.value !== "") {
     inputBill.classList.add("input--invalid");
     inputBillInvalidInput.innerText = "Enter a number";
@@ -62,17 +62,12 @@ inputBill.addEventListener("keyup", handleInputBill);
 // ===========
 // TIP BUTTONS
 // ===========
+
 // Store the tip buttons in a variable
 const tipButtons = document.querySelectorAll("button.input__tip-btn");
-// const tipBtn05 = document.querySelector("#p05");
-// const tipBtn10 = document.querySelector("#p10");
-// const tipBtn15 = document.querySelector("#p15");
-// const tipBtn25 = document.querySelector("#p25");
-// const tipBtn50 = document.querySelector("#p50");
 
 // Create an function to remove the active state from all buttons
 function clearTipActive(buttons) {
-  // Remove active state class from each button in buttons
   buttons.forEach((button) => {
     button.classList.remove("input__tip-btn--active");
   });
@@ -130,15 +125,18 @@ function handleBtnTipCustom(event) {
   // Compute the percent of the string selected
   const percentStr = parseFloat(event.currentTarget.value);
 
+  // Remove error message otherwise
+  // This is here to ensure that when user clears the input, any pre-existing error message is removed
   if (Number.isNaN(percentStr) && event.currentTarget.value !== "") {
     tipBtnCustom.classList.add("input--invalid");
     tipBtnCustomInvalidInput.innerText = "Enter a number";
     tipBtnCustomInvalidInput.style.display = "inline";
     return;
-  } else {
-    // Remove error message otherwise
-    tipBtnCustom.classList.remove("input--invalid");
-    tipBtnCustomInvalidInput.style.display = "none";
+  }
+  // Remove error message otherwise
+  // This removes the error message if a use clears the input after entering an invalid input
+  else {
+    clearTipBtnInvalidInput();
   }
 
   // Convert percentStr to percent if it is a number
@@ -153,11 +151,16 @@ function handleBtnTipCustom(event) {
   }
 }
 
+// Add function to clear error message on custom tip input
+function clearTipBtnInvalidInput() {
+  tipBtnCustom.classList.remove("input--invalid");
+  tipBtnCustomInvalidInput.style.display = "none";
+}
+
 // Add function to clear the custom tip input
 function clearTipBtn() {
   tipBtnCustom.value = "";
-  tipBtnCustom.classList.remove("input--invalid");
-  tipBtnCustomInvalidInput.style.display = "none";
+  clearTipBtnInvalidInput();
 }
 
 // Add event listener to the custom tip button
@@ -192,13 +195,14 @@ function handleInputPeople(event) {
     return;
   }
   // Remove error message otherwise
+  // This removes the error message if a use clears the input after entering an invalid input
   else {
-    // Remove error messages
-    inputPeople.classList.remove("input--invalid");
-    inputPeopleInvalidInput.style.display = "none";
+    clearNumPeopleInvalidInput();
   }
 
-  // If input is valid
+  // If input is valid,
+  // update the global object people value and
+  // determine if we can compute the tip
   if (inputStr) {
     inputs.people = inputStr;
 
@@ -207,11 +211,16 @@ function handleInputPeople(event) {
   }
 }
 
+// Add function to clear error message from input
+function clearNumPeopleInvalidInput() {
+  inputPeople.classList.remove("input--invalid");
+  inputPeopleInvalidInput.style.display = "none";
+}
+
 // Add function to clear the custom tip input
 function clearNumPeople() {
   inputPeople.value = "";
-  inputPeople.classList.remove("input--invalid");
-  inputPeopleInvalidInput.style.display = "none";
+  clearNumPeopleInvalidInput();
 }
 
 // Add event listener to the bill input
@@ -262,9 +271,9 @@ function computeTip(inputs) {
   }`;
 }
 
-// ============
-// RESET BUTTON
-// ============
+// =====
+// RESET
+// =====
 // Store the reset button in a variable
 const resetBtn = document.querySelector(".output__btn");
 
@@ -294,7 +303,7 @@ function handleReset() {
 // Add event listener to the resetBtn using the reset() event handler
 resetBtn.addEventListener("click", handleReset);
 
-// Run handleReset on page reload
+// Run handleReset on page reload to clear the inputs if user reloads the page
 window.onload = function () {
   handleReset();
 };
