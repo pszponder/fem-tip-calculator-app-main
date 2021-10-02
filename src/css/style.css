@@ -95,7 +95,7 @@ main {
 .input__num-people,
 .output__tip,
 .output__total {
-  margin-bottom: 2rem;
+  margin: 1.5rem 0;
 }
 
 /* ===== */
