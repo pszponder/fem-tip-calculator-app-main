@@ -31,7 +31,8 @@
           <!-- BILL AMOUNT -->
           <div class="input__bill">
             <label for="bill" class="input__label"
-              >Bill<span
+              >Bill
+              <span
                 id="input__bill--invalid"
                 class="input__label--invalid"
               ></span
@@ -48,16 +49,14 @@
               <button class="input__tip-btn" id="p15">15%</button>
               <button class="input__tip-btn" id="p25">25%</button>
               <button class="input__tip-btn" id="p50">50%</button>
-              <!-- <button class="input__tip-btn">Custom</button> -->
               <input
                 type="text"
                 id="pCustom"
                 placeholder="Custom"
                 class="input__tip-btn"
               />
-              <span
-                class="input__tip-btn-custom--invalid"
-              >Enter a number</span
+              <!-- Error Message for Invalid Input -->
+              <span class="input__tip-btn-custom--invalid"></span>
             </div>
           </div>
           <!-- NUMBER OF PEOPLE -->
