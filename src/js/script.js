@@ -262,13 +262,15 @@ function canCompute(inputs) {
 
 // Create function that will compute the tip
 function computeTip(inputs) {
-  amountTip.innerText = `${
-    Math.round(((inputs.bill * inputs.tip) / inputs.people) * 100) / 100
-  }`;
+  amountTip.innerText = `$${(
+    (((inputs.bill * inputs.tip) / inputs.people) * 100) /
+    100
+  ).toFixed(2)}`;
 
-  amountTotal.innerText = `${
-    Math.round(((inputs.bill * (1 + inputs.tip)) / inputs.people) * 100) / 100
-  }`;
+  amountTotal.innerText = `$${(
+    (((inputs.bill * (1 + inputs.tip)) / inputs.people) * 100) /
+    100
+  ).toFixed(2)}`;
 }
 
 // =====
