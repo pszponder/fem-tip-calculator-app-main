@@ -1,23 +1,91 @@
 /* ========= */
 /* VARIABLES */
 /* ========= */
-:root {
-  /* Primary Colors */
-  --color__cyan-primary: hsl(172, 67%, 45%);
 
-  /* Neutral Colors */
-  /* Very dark cyan */
-  --color__cyan-dark: hsl(183, 100%, 15%);
-  /* dark grayish cyan */
-  --color__cyan-dark-gray1: hsl(186, 14%, 43%);
-  /* dark grayish cyan */
-  --color__cyan-dark-gray2: hsl(184, 14%, 56%);
-  /* light grayish cyan */
-  --color__cyan-light-gray1: hsl(185, 41%, 84%);
-  /* light grayish cyan */
-  --color__cyan-light-gray2: hsl(189, 41%, 97%);
-  /* white */
-  --color__white: hsl(0, 0%, 100%);
+/* ================== */
+/* LIGHT THEME COLORS */
+/* ================== */
+html[data-theme="light"] {
+  /* BODY */
+  /* body Background Color */
+  --color__body: hsl(185, 41%, 84%);
+
+  /* h1 heading */
+  --color__title: hsl(186, 14%, 43%);
+
+  /* APPLICATION */
+  /* Application Background Color */
+  --color__main: hsl(0, 0%, 100%);
+
+  /* INPUT SECTION */
+  /* Input Fields */
+  --color__input-field-background: hsl(189, 41%, 94%);
+  --color__input-field-text: hsl(183, 100%, 15%);
+  --color__input-field-label: hsl(186, 14%, 43%);
+
+  /* TIP Buttons */
+  --color__input-btns-background-default: hsl(183, 100%, 15%);
+  --color__input-btns-text-default: hsl(189, 41%, 97%);
+
+  --color__input-btns-background-hover: hsl(172, 67%, 45%);
+  --color__input-btns-text-hover: hsl(183, 100%, 15%);
+
+  --color__input-btns-background-active: hsl(172, 67%, 45%);
+  --color__input-btns-text-active: hsl(183, 100%, 15%);
+
+  /* OUTPUT SECTION */
+  --color__output-background: hsl(183, 100%, 15%);
+  --color__output-heading: hsl(189, 41%, 97%);
+  --color__output-heading-sub: hsl(184, 14%, 56%);
+  --color__output-text: hsl(172, 67%, 45%);
+
+  /* Output Button */
+  --color__output-btn-background: hsl(183, 100%, 20%);
+  --color__output-btn-text: hsl(183, 100%, 15%);
+  --color__output-btn-background-hover: hsl(172, 67%, 45%);
+}
+
+/* ================= */
+/* DARK THEME COLORS */
+/* ================= */
+html[data-theme="dark"] {
+  /* BODY */
+  /* body Background Color */
+  --color__body: hsl(185, 41%, 84%);
+
+  /* h1 heading */
+  --color__title: hsl(186, 14%, 43%);
+
+  /* APPLICATION */
+  /* Application Background Color */
+  --color__main: hsl(0, 0%, 100%);
+
+  /* INPUT SECTION */
+  /* Input Fields */
+  --color__input-field-background: hsl(189, 41%, 94%);
+  --color__input-field-text: hsl(183, 100%, 15%);
+  --color__input-field-label: hsl(186, 14%, 43%);
+
+  /* TIP Buttons */
+  --color__input-btns-background-default: hsl(183, 100%, 15%);
+  --color__input-btns-text-default: hsl(189, 41%, 97%);
+
+  --color__input-btns-background-hover: hsl(172, 67%, 45%);
+  --color__input-btns-text-hover: hsl(183, 100%, 15%);
+
+  --color__input-btns-background-active: hsl(172, 67%, 45%);
+  --color__input-btns-text-active: hsl(183, 100%, 15%);
+
+  /* OUTPUT SECTION */
+  --color__output-background: hsl(183, 100%, 15%);
+  --color__output-heading: hsl(189, 41%, 97%);
+  --color__output-heading-sub: hsl(184, 14%, 56%);
+  --color__output-text: hsl(172, 67%, 45%);
+
+  /* Output Button */
+  --color__output-btn-background: hsl(183, 100%, 20%);
+  --color__output-btn-text: hsl(183, 100%, 15%);
+  --color__output-btn-background-hover: hsl(172, 67%, 45%);
 }
 
 /* ===== */
@@ -49,7 +117,7 @@ h3 {
 /* BODY */
 /* ==== */
 body {
-  background-color: var(--color__cyan-light-gray1);
+  background-color: var(--color__body);
 
   /* Flex to Align Content */
   display: flex;
@@ -62,7 +130,7 @@ body {
 /* HEADER */
 /* ====== */
 h1 {
-  color: var(--color__cyan-dark-gray1);
+  color: var(--color__title);
   text-transform: uppercase;
   letter-spacing: 1rem;
   margin-bottom: 2rem;
@@ -75,7 +143,7 @@ main {
   padding: 3rem;
   width: 35rem;
   border-radius: 2rem;
-  background-color: var(--color__white);
+  background-color: var(--color__main);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
 }
 
@@ -132,8 +200,8 @@ input {
   width: 100%;
   padding: 0.5rem;
   text-align: end;
-  background-color: var(--color__cyan-light-gray2);
-  color: var(--color__cyan-dark);
+  background-color: var(--color__input-field-background);
+  color: var(--color__input-field-text);
   border: none;
   font-weight: 700;
   border-radius: 0.5rem;
@@ -141,7 +209,7 @@ input {
 
 label,
 .input__tip h2 {
-  color: var(--color__cyan-dark-gray1);
+  color: var(--color__input-field-label);
 }
 
 label {
@@ -188,18 +256,18 @@ label {
 }
 
 button.input__tip-btn {
-  background-color: var(--color__cyan-dark);
-  color: var(--color__cyan-light-gray2);
+  background-color: var(--color__input-btns-background-default);
+  color: var(--color__input-btns-text-default);
 }
 
 button.input__tip-btn:hover {
-  background-color: var(--color__cyan-primary);
-  color: var(--color__cyan-dark);
+  background-color: var(--color__input-btns-background-hover);
+  color: var(--color__input-btns-text-hover);
 }
 
 button.input__tip-btn--active {
-  background-color: var(--color__cyan-primary);
-  color: var(--color__cyan-dark);
+  background-color: var(--color__input-btns-background-active);
+  color: var(--color__input-btns-text-active);
 }
 
 /* ================ */
@@ -271,7 +339,7 @@ button.input__tip-btn--active {
 .output {
   padding: 2rem;
 
-  background-color: var(--color__cyan-dark);
+  background-color: var(--color__output-background);
   border-radius: 2rem;
 
   /* Flex Item */
@@ -290,15 +358,15 @@ button.input__tip-btn--active {
 }
 
 .output__header2 {
-  color: var(--color__cyan-light-gray2);
+  color: var(--color__output-heading);
 }
 
 .output__header3 {
-  color: var(--color__cyan-dark-gray2);
+  color: var(--color__output-heading-sub);
 }
 
 .output__result {
-  color: var(--color__cyan-primary);
+  color: var(--color__output-text);
   font-size: 3.5rem;
   font-weight: 700;
 }
@@ -316,8 +384,8 @@ button.input__tip-btn--active {
 /* ============ */
 .output__btn {
   padding: 1rem 2rem;
-  background-color: hsl(183, 100%, 20%);
-  color: var(--color__cyan-dark);
+  background-color: var(--color__output-btn-background);
+  color: var(--color__output-btn-text);
   font-size: 2rem;
   font-weight: 700;
   border: none;
@@ -326,7 +394,7 @@ button.input__tip-btn--active {
 }
 
 .output__btn:hover {
-  background-color: var(--color__cyan-primary);
+  background-color: var(--color__output-btn-background-hover);
 }
 
 /* =========== */
