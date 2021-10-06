@@ -60,6 +60,8 @@ From the JavaScript perspective, I learned to use the `document.querySelector()`
 
 - [Kevin Powell - CSS Positioning: Position absolute and relative explained](https://www.youtube.com/watch?v=P6UgYq3J3Qs) - In order to understand how to position the before and after pseudo-elements, I watched Kevin's video on absolute vs relative position and in conjuction with his videos on pseudo-elements, learned how to properly position the pseudo elements.
 
+- [Florin Pop - Light/Dark Theme with CSS and JavaScript](https://www.youtube.com/watch?v=xodD0nw2veQ) - This video helped me understand how to implement a sliding toggle button which I used for a light and dark theme in my app. Florin posts some great videos on YouTube, definately check him out!
+
 ## Author
 
 - GitHub - [@pszponder](https://github.com/pszponder)

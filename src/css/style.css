@@ -19,7 +19,7 @@ html[data-theme="light"] {
 
   /* INPUT SECTION */
   /* Input Fields */
-  --color__input-field-background: hsl(189, 41%, 94%);
+  --color__input-field-background: hsl(189, 20%, 94%);
   --color__input-field-text: hsl(183, 100%, 15%);
   --color__input-field-label: hsl(186, 14%, 43%);
 
@@ -27,22 +27,22 @@ html[data-theme="light"] {
   --color__input-btns-background-default: hsl(183, 100%, 15%);
   --color__input-btns-text-default: hsl(189, 41%, 97%);
 
-  --color__input-btns-background-hover: hsl(172, 67%, 45%);
+  --color__input-btns-background-hover: hsl(172, 50%, 45%);
   --color__input-btns-text-hover: hsl(183, 100%, 15%);
 
-  --color__input-btns-background-active: hsl(172, 67%, 45%);
+  --color__input-btns-background-active: hsl(172, 50%, 45%);
   --color__input-btns-text-active: hsl(183, 100%, 15%);
 
   /* OUTPUT SECTION */
-  --color__output-background: hsl(183, 100%, 15%);
+  --color__output-background: hsl(183, 90%, 15%);
   --color__output-heading: hsl(189, 41%, 97%);
   --color__output-heading-sub: hsl(184, 14%, 56%);
-  --color__output-text: hsl(172, 67%, 45%);
+  --color__output-text: hsl(172, 50%, 45%);
 
   /* Output Button */
   --color__output-btn-background: hsl(183, 100%, 20%);
   --color__output-btn-text: hsl(183, 100%, 15%);
-  --color__output-btn-background-hover: hsl(172, 67%, 45%);
+  --color__output-btn-background-hover: hsl(172, 50%, 45%);
 }
 
 /* ================= */
@@ -51,41 +51,41 @@ html[data-theme="light"] {
 html[data-theme="dark"] {
   /* BODY */
   /* body Background Color */
-  --color__body: hsl(185, 41%, 84%);
+  --color__body: hsl(185, 30%, 15%);
 
   /* h1 heading */
-  --color__title: hsl(186, 14%, 43%);
+  --color__title: hsl(186, 15%, 80%);
 
   /* APPLICATION */
   /* Application Background Color */
-  --color__main: hsl(0, 0%, 100%);
+  --color__main: hsl(186, 50%, 5%);
 
   /* INPUT SECTION */
   /* Input Fields */
-  --color__input-field-background: hsl(189, 41%, 94%);
-  --color__input-field-text: hsl(183, 100%, 15%);
-  --color__input-field-label: hsl(186, 14%, 43%);
+  --color__input-field-background: hsl(251, 40%, 39%);
+  --color__input-field-text: hsl(183, 85%, 50%);
+  --color__input-field-label: hsl(186, 15%, 80%);
 
   /* TIP Buttons */
-  --color__input-btns-background-default: hsl(183, 100%, 15%);
-  --color__input-btns-text-default: hsl(189, 41%, 97%);
+  --color__input-btns-background-default: hsl(251, 98%, 39%);
+  --color__input-btns-text-default: hsl(186, 15%, 80%);
 
-  --color__input-btns-background-hover: hsl(172, 67%, 45%);
+  --color__input-btns-background-hover: hsl(183, 85%, 50%);
   --color__input-btns-text-hover: hsl(183, 100%, 15%);
 
-  --color__input-btns-background-active: hsl(172, 67%, 45%);
+  --color__input-btns-background-active: hsl(183, 85%, 50%);
   --color__input-btns-text-active: hsl(183, 100%, 15%);
 
   /* OUTPUT SECTION */
-  --color__output-background: hsl(183, 100%, 15%);
+  --color__output-background: hsl(251, 75%, 39%);
   --color__output-heading: hsl(189, 41%, 97%);
   --color__output-heading-sub: hsl(184, 14%, 56%);
   --color__output-text: hsl(172, 67%, 45%);
 
   /* Output Button */
-  --color__output-btn-background: hsl(183, 100%, 20%);
-  --color__output-btn-text: hsl(183, 100%, 15%);
-  --color__output-btn-background-hover: hsl(172, 67%, 45%);
+  --color__output-btn-background: hsl(251, 98%, 39%);
+  --color__output-btn-text: hsl(183, 100%, 20%);
+  --color__output-btn-background-hover: hsl(183, 85%, 50%);
 }
 
 /* ===== */
@@ -96,6 +96,9 @@ html[data-theme="dark"] {
 
 * {
   font-family: "Space Mono", monospace;
+
+  /* Define Transition for Color Theme */
+  transition: background 0.2s linear;
 }
 
 .input__tip-btn,
@@ -397,12 +400,67 @@ button.input__tip-btn--active {
   background-color: var(--color__output-btn-background-hover);
 }
 
+/* ====== */
+/* FOOTER */
+/* ====== */
+footer {
+  margin-top: 2rem;
+
+  /* Flex Container */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* ====================== */
+/* TOGGLE FOR COLOR THEME */
+/* ====================== */
+.toggle__container {
+  margin: 1rem 0 3rem 0;
+}
+
+.toggle__switch {
+  /* Remove toggle visibility */
+  display: none;
+}
+
+/* This will be the toggle background */
+.toggle__label {
+  width: 8rem;
+  height: 4rem;
+  background-color: hsl(0, 0%, 7%);
+  border-radius: 4rem;
+  cursor: pointer;
+
+  /* Flex Container */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.toggle__ball {
+  background-color: white;
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+/* Change background color of label when switch checked */
+.toggle__switch:checked + .toggle__label {
+  background-color: hsl(251, 98%, 39%);
+}
+
+/* Select the toggle__ball when the toggle__switch is checked */
+.toggle__switch:checked + .toggle__label .toggle__ball {
+  transform: translateX(4rem);
+}
+
 /* =========== */
 /* ATTRIBUTION */
 /* =========== */
-footer {
-  margin-top: 2rem;
-}
 
 .attribution {
   font-size: 11px;
@@ -413,7 +471,9 @@ footer {
   color: hsl(228, 45%, 44%);
 }
 
+/* =========================== */
 /* Media Query for Desktop Mode*/
+/* =========================== */
 @media (min-width: 49em) {
   main {
     width: 78rem;

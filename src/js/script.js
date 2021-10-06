@@ -309,3 +309,28 @@ resetBtn.addEventListener("click", handleReset);
 window.onload = function () {
   handleReset();
 };
+
+// ===================
+// TOGGLE COLOR THEMES
+// ===================
+
+// Create a function which will toggle the color scheme between light and dark
+function toggleColorTheme(event) {
+  // Select the HTML DOM element
+  const htmlElement = document.querySelector("html");
+
+  // Determine the toggled status of the switch
+  const switchStatus = event.currentTarget.checked;
+
+  // Toggle the data-theme
+  if (switchStatus) {
+    htmlElement.dataset.theme = "dark";
+  } else {
+    htmlElement.dataset.theme = "light";
+  }
+}
+
+// Add an event listener to toggle button
+document
+  .querySelector(".toggle__switch")
+  .addEventListener("click", toggleColorTheme);
