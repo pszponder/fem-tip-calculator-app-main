@@ -181,9 +181,9 @@ function handleInputPeople(event) {
   const inputStr = parseInt(event.currentTarget.value);
 
   // Show error message if input is 0
-  if (inputStr === 0) {
+  if (inputStr <= 0) {
     inputPeople.classList.add("input--invalid");
-    inputPeopleInvalidInput.innerText = "Can't be zero";
+    inputPeopleInvalidInput.innerText = "Can't be <= zero";
     inputPeopleInvalidInput.style.display = "inline";
     return;
   }
